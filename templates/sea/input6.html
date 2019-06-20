@@ -1,0 +1,56 @@
+<!-- {{ trial6 }} -->
+
+<!-- {{ form }} -->
+
+<body style="background-color: aquamarine">
+
+    <table>
+        <h1>Lookup Site data add form.</h1>
+        {% csrf_token %}
+        <tr>
+            <form action="" method="post">
+                {% csrf_token %}
+                <td>{{form.SiteName}}</td>
+                <td>{{form.ID}}</td>
+                <td>{{form.GPS_X}}</td>
+                <td>{{form.GPS_Y}}</td>
+                <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+            </form>
+            </td>
+        </tr>
+        <thead>
+            <tr>
+                <td>
+                    <p>Site Name</p>
+                </td>
+                <td>
+                    <p>ID </p>
+                </td>
+                <td>
+                    <p>GPS X</p>
+                </td>
+                <td>
+                    <p>GPS Y</p>
+                </td>
+                <td>
+                    <p>Change</p>
+                </td>
+            </tr>
+        </thead>
+        <!-- {% for item in inventory %}
+        <tr class="datarow">
+            <td>{{item.quantity}}</td>
+            <td>{{item.needs_repairs}}</td>
+            <td>
+                <td>
+                    <form action="/remove_items/" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="item_id" value="{{item.id}}" />
+                        <input type="submit" value="delete item">
+                    </form>
+                </td>
+            </td>
+        </tr>
+        {% endfor %} -->
+    </table>
+</body>

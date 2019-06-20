@@ -1,0 +1,56 @@
+<!-- {{ trial2 }} -->
+
+<!-- {{ form }} -->
+
+<body style="background-color: aquamarine">
+
+    <table>
+        <h1>lookup Benthic data add form.</h1>
+        {% csrf_token %}
+        <tr>
+            <form action="" method="post">
+                {% csrf_token %}
+                <td>{{form.Name_Local}}</td>
+                <td>{{form.Abbrv}}</td>
+                <td>{{form.Name_Common}}</td>
+                <td>{{form.ID}}</td>
+                <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+            </form>
+            </td>
+        </tr>
+        <thead>
+            <tr>
+                <td>
+                    <p>Local Name</p>
+                </td>
+                <td>
+                    <p>Abbreviation </p>
+                </td>
+                <td>
+                    <p>Common Name </p>
+                </td>
+                <td>
+                    <p>ID</p>
+                </td>
+                <td>
+                    <p>Change</p>
+                </td>
+            </tr>
+        </thead>
+        <!-- {% for item in inventory %}
+            <tr class="datarow">
+                <td>{{item.quantity}}</td>
+                <td>{{item.needs_repairs}}</td>
+                <td>
+                    <td>
+                        <form action="/remove_items/" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="item_id" value="{{item.id}}" />
+                            <input type="submit" value="delete item">
+                        </form>
+                    </td>
+                </td>
+            </tr>
+            {% endfor %} -->
+    </table>
+</body>

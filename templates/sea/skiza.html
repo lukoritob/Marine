@@ -1,0 +1,31 @@
+<!-- {{ stuffs }} {{ listen }} -->
+<h1>Invert Site Query</h1>
+
+<body style="background-color: aqua">
+    <form style="margin-left:80px">
+        Invert Name: <input list="names" style="margin-top: 20px">
+        <datalist id="names">
+            {% for i in listen %}
+                <option>
+                    {{ i.Name_Common }} {{ i.Name_Local }}
+                </option>
+            {% endfor %}
+        </datalist>
+        <br> Site Name: <input list="sites" style="margin-top: 20px">
+        <datalist id="sites">
+        {% for j in stuffs %}
+            <option>
+                {{ j.SiteName }}
+                
+            </option>
+        {% endfor %}
+    </datalist>
+
+        <br> Start Date: <input type="date" name="start_date" style="margin-top: 20px">
+        <br> End Date: <input type="date" name="end_date" style="margin-top: 20px">
+        <br>
+        <input type="submit" name="submit" value="Run Query" style="margin-top: 20px">
+        <input type="button" name="ok" value="Exit" style="margin-top: 20px">
+        <input type="reset" name="reset" value="Reset" style="margin-top: 20px">
+    </form>
+</body>

@@ -1,0 +1,29 @@
+<!-- {{ lastone }} {{ balls }} -->
+<h1>Fish Site Query</h1>
+
+<body style="background-color: aqua">
+    <form style="margin-left:80px">
+        benthic Name Abbreviation: <input list="abbreviation">
+        <datalist id="abbreviation">
+        {% for i in lastone %}
+            <option>
+                {{ i.Abbrv }}{{ i.Name_Local }}
+            </option>
+        {% endfor %}
+        </datalist>
+        <br> Site Name: <input list="names" style="margin-top: 20px">
+        <datalist id="names">
+        {% for item in balls %}
+            <option>
+                {{ item.SiteName }}
+            </option>
+        {% endfor %}
+        </datalist>
+        <br> Start Date: <input type="date" name="start_date" style="margin-top: 20px">
+        <br> End Date: <input type="date" name="end_date" style="margin-top: 20px">
+        <br>
+        <input type="submit" name="submit" value="Run Query" style="margin-top: 20px">
+        <input type="button" name="ok" value="Exit" style="margin-top: 20px">
+        <input type="reset" name="reset" value="Reset" style="margin-top: 20px">
+    </form>
+</body>

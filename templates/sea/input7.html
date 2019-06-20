@@ -1,0 +1,60 @@
+<!-- {{ trial7 }} -->
+
+<!-- {{ form }} -->
+
+<body style="background-color: aquamarine">
+
+    <table>
+        <h1>Survey Info data add form.</h1>
+        {% csrf_token %}
+        <tr>
+            <form action="" method="post">
+                {% csrf_token %}
+                <td>{{form.TransID}}</td>
+                <td>{{form.Name_Data_Collector}}</td>
+                <td>{{form.Site_Name}}</td>
+                <td>{{form.Trans_No}}</td>
+                <td>{{form.Date_Survey}}</td>
+                <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+            </form>
+            </td>
+        </tr>
+        <thead>
+            <tr>
+                <td>
+                    <p>TransID</p>
+                </td>
+                <td>
+                    <p>Data Collector's Name </p>
+                </td>
+                <td>
+                    <p>Site Name</p>
+                </td>
+                <td>
+                    <p>Trans Number</p>
+                </td>
+                <td>
+                    <p>Date Surveyed</p>
+                </td>
+                <td>
+                    <p>Change</p>
+                </td>
+            </tr>
+        </thead>
+        <!-- {% for item in inventory %}
+        <tr class="datarow">
+            <td>{{item.quantity}}</td>
+            <td>{{item.needs_repairs}}</td>
+            <td>
+                <td>
+                    <form action="/remove_items/" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="item_id" value="{{item.id}}" />
+                        <input type="submit" value="delete item">
+                    </form>
+                </td>
+            </td>
+        </tr>
+        {% endfor %} -->
+    </table>
+</body>

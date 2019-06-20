@@ -1,0 +1,29 @@
+<!-- {{ items }} {{ think }} -->
+<h1>Fish Site Query</h1>
+
+<body style="background-color: aqua">
+    <form style="margin-left:80px">
+        Site Name: <input list="site_name">
+        <datalist id="site_name">
+        {% for i in items %}
+            <option>
+                {{ i.SiteName }}
+            </option>
+        {% endfor %}
+        </datalist>
+        <br> Fish Type: <input list="fish_type" style="margin-top: 20px">
+        <datalist id="fish_type">
+        {% for i in think %}
+            <option>
+                {{ i.Name_Local }}
+            </option>
+        {% endfor %}
+        </datalist>
+        <br> Start Date: <input type="date" name="start_date" style="margin-top: 20px">
+        <br> End Date: <input type="date" name="end_date" style="margin-top: 20px">
+        <br>
+        <input type="submit" name="submit" value="Run Query" style="margin-top: 20px">
+        <input type="button" name="ok" value="Exit" style="margin-top: 20px">
+        <input type="reset" name="reset" value="Reset" style="margin-top: 20px">
+    </form>
+</body>

@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>{% block title %}
+    <h1><strong>MARINE ECOSYSTEM.</strong></h1> {% endblock %}
+    <link rel="stylesheet" type="text/css" href="{% static 'sea/style.css' %}">
+</head>
+
+<body>
+    <p>Hey! look, we finally have a homepage. it was Brian's idea, he was tired of working on "updating-tables" thingy. we hope it's pleasant enough. at leastfor now. we're worn out af. we'll work on the pimping some other day. our designs are really awful.
+        we'll be attending architecture classes as from tomorrow. see ya1</p>
+    <ul>
+        <h2>Data addition links.</h2>
+        <li>
+            <a href="{% url 'sea:input' %}">Lookup fish.</a>
+
+        </li>
+        <li>
+            <a href="{% url 'sea:input1' %}">lookup invert</a>
+
+        </li>
+        <li>
+            <a href="{% url 'sea:input2' %}">Lookup benthic.</a>
+
+        </li>
+        <li>
+            <a href="{% url 'sea:input3' %}">Benthic Survey</a>
+
+        </li>
+        <li>
+            <a href="{% url 'sea:input4' %}">Fish survey.</a>
+
+        </li>
+        <li>
+            <a href="{% url 'sea:input5' %}">Invert data.</a>
+
+        </li>
+        <li>
+            <a href="{% url 'sea:input6' %}">Lookup site.</a>
+
+        </li>
+        <li>
+            <a href="{% url 'sea:input7' %}">Survey info.</a>
+
+        </li>
+    </ul>
+
+    <ul>
+        <h2>Queries lists.</h2>
+        <li>
+            <a href="{% url 'sea:think' %}">Fish site query.</a>
+
+        </li>
+        <li>
+            <a href="{% url 'sea:stuffs' %}">Invert site query.</a>
+
+        </li>
+        <li>
+            <a href="{% url 'sea:lastone' %}">Benthic site query.</a>
+
+        </li>
+
+    </ul>
+
+
+
+
+    {% block body %} {% endblock %}
+</body>
+
+</html>

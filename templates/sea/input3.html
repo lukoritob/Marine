@@ -1,0 +1,57 @@
+<!-- {{ trial3 }} -->
+
+<!-- {{ form }} -->
+
+<body style="background-color: aquamarine">
+
+    <table>
+        <h1>Benthic Survey data add form.</h1>
+        {% csrf_token %}
+        <tr>
+            <form action="" method="post">
+                {% csrf_token %}
+                <td>{{form.id}}</td>
+                <td>{{form.Enter_Transect_ID}}</td>
+                <td>{{form.Enter_benthic_category}}</td>
+                <td>{{form.Enter_total_cover}}</td>
+                <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+            </form>
+            </td>
+        </tr>
+        <thead>
+            <tr>
+                <td>
+                    <p>id</p>
+                </td>
+                <td>
+                    <p>Transect ID</p>
+                </td>
+                <td>
+                    <p>Benthic category</p>
+                </td>
+                </td>
+                <td>
+                    <p>Total cover</p>
+                </td>
+                <td>
+                    <p>Change</p>
+                </td>
+            </tr>
+        </thead>
+        <!-- {% for item in inventory %}
+            <tr class="datarow">
+                <td>{{item.quantity}}</td>
+                <td>{{item.needs_repairs}}</td>
+                <td>
+                    <td>
+                        <form action="/remove_items/" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="item_id" value="{{item.id}}" />
+                            <input type="submit" value="delete item">
+                        </form>
+                    </td>
+                </td>
+            </tr>
+            {% endfor %} -->
+    </table>
+</body>

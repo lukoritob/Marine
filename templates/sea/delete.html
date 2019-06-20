@@ -1,0 +1,18 @@
+<!-- {{fine}} -->
+<table>
+    {% csrf_token %} {% for item in fine %}
+    <tr class="datarow">
+        <td>{{item.Name_Local}}</td>
+        <td>{{item.Name_Common}}</td>
+        <td>
+            <td>
+                <form action="" method="POST">
+                    <!-- {% csrf_token %} -->
+                    <input type="hidden" name="item_id" value="{{fine}}" />
+                    <input type="submit" value="delete item">
+                </form>
+            </td>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

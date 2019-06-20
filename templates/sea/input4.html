@@ -1,0 +1,56 @@
+<!-- {{ trial4 }} -->
+
+<!-- {{ form }} -->
+
+<body style="background-color: aquamarine">
+
+    <table>
+        <h1>Fish survey data add form.</h1>
+        {% csrf_token %}
+        <tr>
+            <form action="" method="post">
+                {% csrf_token %}
+                <td>{{form.id}}</td>
+                <td>{{form.Trans_ID}}</td>
+                <td>{{form.Name_Local}}</td>
+                <td>{{form.Total_Count}}</td>
+                <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+            </form>
+            </td>
+        </tr>
+        <thead>
+            <tr>
+                <td>
+                    <p>id</p>
+                </td>
+                <td>
+                    <p>Trans ID </p>
+                </td>
+                <td>
+                    <p>Local Name</p>
+                </td>
+                <td>
+                    <p>Total count</p>
+                </td>
+                <td>
+                    <p>Change</p>
+                </td>
+            </tr>
+        </thead>
+        <!-- {% for item in inventory %}
+        <tr class="datarow">
+            <td>{{item.quantity}}</td>
+            <td>{{item.needs_repairs}}</td>
+            <td>
+                <td>
+                    <form action="/remove_items/" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="item_id" value="{{item.id}}" />
+                        <input type="submit" value="delete item">
+                    </form>
+                </td>
+            </td>
+        </tr>
+        {% endfor %} -->
+    </table>
+</body>

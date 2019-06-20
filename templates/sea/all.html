@@ -1,0 +1,22 @@
+<!--{{ yote }}-->
+
+<table style="margin-left:50px">
+    <thead>
+        <tr>
+            <th>Lookup ID</th>
+            <th>Lookup GPS_x</th>
+            <th>Lookup GPS_Y</th>
+            <th>Lookup SiteName</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in yote %}
+        <tr>
+            <td>{{ i.ID }}</td>
+            <td>{{ i.GPS_X }}</td>
+            <td>{{ i.GPS_Y}}</td>
+            <td>{{ i.SiteName }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
