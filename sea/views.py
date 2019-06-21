@@ -51,21 +51,51 @@ def query4(request, template_name='sea/input.html'):
     form = Lookup_FishForm(request.POST or None)
     if form.is_valid():
         form.save()
+    # elif form.is_valid() and request.method == "POST" :
+    #     item_id = request.POST.get(Lookup_FishForm, 'Name_Local')
+    #     item = Lookup_Fish.objects.get(id=item_id)
+    #     item.delete()
     context = {
         'trial':trial,
         'form':form
         }
     return render(request, template_name, context)
-def query12(request):
-    form = Lookup_FishForm()
-    fine = Lookup_Fish.objects.all()
-    if request.method == 'POST':
-        item_id = int(request.POST.get('item_id'))  
-        item = Lookup_Fish.objects.get(id=item_id)       
+
+# def query12(request, pk, template_name='sea/input.html'):
+#     form = Lookup_FishForm(request.POST or None)
+#     fine= get_object_or_404(Lookup_Fish, Name_Local=pk)   
+#     # fine  = Lookup_Fish.objects.all() 
+#     if request.method=='POST':
+#         form.delete()
+#         return redirect('input')
+#     context = {
+#         'fine':fine,
+#         'form':form
+#     }
+#     return render(request, template_name, context)
+    
+    
+def query12(request, template_name='sea/input.html'):
+    fine  = Lookup_Fish.objects.all()
+    form = Lookup_FishForm(request.POST or None)
+    if form.is_valid() and request.method == 'POST':
+        item_id = int(request.POST.get('Name_Local'))
+        item = Lookup_Fish.objects.get(id=item_id)
         item.delete()
-    return render_to_response('sea/delete.html', {
-            'form':form, 'fine':fine, 
-            }, RequestContext(request))
+    context = {
+        'fine':fine,
+        'form':form
+        }
+    return render(request, template_name, context)
+
+# def query12(request):
+#     form = Lookup_FishForm()
+#     fine = Lookup_Fish.objects.all()
+#     if request.method == 'POST':
+#         item_id = int(request.POST.get('item_id'))  
+#         item = Lookup_Fish.objects.get(id=item_id)       
+#         item.delete()
+#     return render(request, template_name, context)
 
 class Lookup_InvertForm(ModelForm):
     class Meta:
