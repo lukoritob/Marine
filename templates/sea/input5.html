@@ -1,11 +1,30 @@
 <!-- {{ trial5 }} -->
+<table>
+    <h1>Invertebrates data add form.</h1>
+    <h3>Existing data.</h3>
+    <thead>
+        <tr>
+            <th>Trans ID.</th>
+            <th>Invertebrate name</th>
+            <th>Numberl</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% csrf_token %} {% for item in trial5 %}
+        <tr class="datarow">
+            <td>{{item.TransID}}</td>
+            <td>{{item.Name_Invert}}</td>
+            <td>{{item.No_Invert}}</td>
 
+        </tr>
+        {% endfor %}</tbody>
+</table>
 <!-- {{ form }} -->
 
 <body style="background-color: aquamarine">
 
     <table>
-        <h1>Invert data add form.</h1>
+        <h3>Addition form.</h3>
         {% csrf_token %}
         <tr>
             <form action="" method="post">
@@ -14,6 +33,7 @@
                 <td>{{form.Name_Invert}}</td>
                 <td>{{form.No_Invert}}</td>
                 <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+                <td> <input class="table_button" type="reset" value="Reset" /></td>
             </form>
             </td>
         </tr>
@@ -29,7 +49,10 @@
                     <p>Number Invert</p>
                 </td>
                 <td>
-                    <p>Change</p>
+                    <p>Add</p>
+                </td>
+                <td>
+                    <p>Reset</p>
                 </td>
             </tr>
         </thead>
