@@ -1,20 +1,44 @@
 <!-- {{ trial4 }} -->
+<table>
+    <h1>fish survey data add form.</h1>
+    <h3>Existing data.</h3>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Trans ID.</th>
+            <th>Local name</th>
+            <th>total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% csrf_token %} {% for item in trial4 %}
+        <tr class="datarow">
+            <td>{{item.ID}}</td>
+            <td>{{item.Trans_ID}}</td>
+            <td>{{item.Name_Local}}</td>
+            <td>{{item.Total_Count}}</td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 <!-- {{ form }} -->
 
 <body style="background-color: aquamarine">
 
     <table>
-        <h1>Fish survey data add form.</h1>
+        <h3>Addition form.</h3>
         {% csrf_token %}
         <tr>
             <form action="" method="post">
                 {% csrf_token %}
-                <td>{{form.id}}</td>
+                <td>{{form.ID}}</td>
                 <td>{{form.Trans_ID}}</td>
                 <td>{{form.Name_Local}}</td>
                 <td>{{form.Total_Count}}</td>
                 <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+                <td> <input class="table_button" type="reset" value="Reset" /></td>
             </form>
             </td>
         </tr>
@@ -33,7 +57,10 @@
                     <p>Total count</p>
                 </td>
                 <td>
-                    <p>Change</p>
+                    <p>Add</p>
+                </td>
+                <td>
+                    <p>Reset</p>
                 </td>
             </tr>
         </thead>
