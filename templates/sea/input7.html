@@ -1,11 +1,35 @@
 <!-- {{ trial7 }} -->
+<table>
+    <h1>Survey information data add form.</h1>
+    <h3>Existing data.</h3>
+    <thead>
+        <tr>
+            <th>TransID</th>
+            <th>Data colllectors</th>
+            <th>site name</th>
+            <th>trans number</th>
+            <th>survey date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% csrf_token %} {% for item in trial7 %}
+        <tr class="datarow">
+            <td>{{item.TransID}}</td>
+            <td>{{item.Name_Data_Collector}}</td>
+            <td>{{item.Site_Name}}</td>
+            <td>{{item.Trans_No}}</td>
+            <td>{{item.Date_Survey}}</td>
 
+        </tr>
+        {% endfor %}
+</table>
+</tbody>
 <!-- {{ form }} -->
 
 <body style="background-color: aquamarine">
 
     <table>
-        <h1>Survey Info data add form.</h1>
+        <h3>Addition form.</h3>
         {% csrf_token %}
         <tr>
             <form action="" method="post">
@@ -16,6 +40,7 @@
                 <td>{{form.Trans_No}}</td>
                 <td>{{form.Date_Survey}}</td>
                 <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+                <td> <input class="table_button" type="reset" value="Reset" /></td>
             </form>
             </td>
         </tr>
@@ -37,7 +62,10 @@
                     <p>Date Surveyed</p>
                 </td>
                 <td>
-                    <p>Change</p>
+                    <p>Add</p>
+                </td>
+                <td>
+                    <p>Reset</p>
                 </td>
             </tr>
         </thead>
