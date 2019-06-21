@@ -1,11 +1,32 @@
 <!-- {{ trial6 }} -->
+<table>
+    <h1>lookup site data add form.</h1>
+    <h3>Existing data.</h3>
+    <thead>
+        <tr>
+            <th>Site name.</th>
+            <th>ID</th>
+            <th>X co-ordinates</th>
+            <th>Y co-ordinates</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% csrf_token %} {% for item in trial6 %}
+        <tr class="datarow">
+            <td>{{item.SiteName}}</td>
+            <td>{{item.ID}}</td>
+            <td>{{item.GPS_X}}</td>
+            <td>{{item.GPS_Y}}</td>
 
+        </tr>
+        {% endfor %}</tbody>
+</table>
 <!-- {{ form }} -->
 
 <body style="background-color: aquamarine">
 
     <table>
-        <h1>Lookup Site data add form.</h1>
+        <h3>Addition form.</h3>
         {% csrf_token %}
         <tr>
             <form action="" method="post">
@@ -15,6 +36,7 @@
                 <td>{{form.GPS_X}}</td>
                 <td>{{form.GPS_Y}}</td>
                 <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+                <td> <input class="table_button" type="reset" value="Reset" /></td>
             </form>
             </td>
         </tr>
@@ -33,7 +55,10 @@
                     <p>GPS Y</p>
                 </td>
                 <td>
-                    <p>Change</p>
+                    <p>Add</p>
+                </td>
+                <td>
+                    <p>Reset</p>
                 </td>
             </tr>
         </thead>
