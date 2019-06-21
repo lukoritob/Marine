@@ -1,40 +1,82 @@
 <!-- {{ trial3 }} -->
+<!-- <table>
+    <h1>lookup invert data add form.</h1>
+    <h3>Existing data.</h3>
+    {% csrf_token %} {% for item in trial3 %}
+    <thead>
+        <tr>
+            <th>Transect ID</th>
+            <th>Benthic category</th>
+            <th>Total cover</th>
+            <th>Change</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="datarow">
+            <td>{{item.Enter_transect_ID}}</td>
+            <td>{{item.Enter_benthic_category}}</td>
+            <td>{{item.Enter_total_cover}}</td>
+
+        </tr>
+    </tbody>
+    {% endfor %}
+</table> -->
+<table style="margin-left:50px">
+    <h1>lookup invert data add form.</h1>
+    <h3>Existing data.</h3>
+    <thead>
+        <tr>
+            <th>Transect ID</th>
+            <th>Benthic category</th>
+            <th>Total cover</th>
+            <th>Change</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% csrf_token %} {% for item in trial3 %}
+        <tr>
+            <td>{{item.Enter_transect_ID}}</td>
+            <td>{{item.Enter_benthic_category}}</td>
+            <td>{{item.Enter_total_cover}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 <!-- {{ form }} -->
 
 <body style="background-color: aquamarine">
 
     <table>
-        <h1>Benthic Survey data add form.</h1>
+        <h3>Addition form.</h3>
         {% csrf_token %}
         <tr>
             <form action="" method="post">
                 {% csrf_token %}
-                <td>{{form.id}}</td>
-                <td>{{form.Enter_Transect_ID}}</td>
+                <td>{{form.Enter_transect_ID}}</td>
                 <td>{{form.Enter_benthic_category}}</td>
                 <td>{{form.Enter_total_cover}}</td>
                 <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+                <td> <input class="table_button" type="reset" value="Reset" /></td>
             </form>
             </td>
         </tr>
         <thead>
             <tr>
                 <td>
-                    <p>id</p>
-                </td>
-                <td>
                     <p>Transect ID</p>
                 </td>
                 <td>
                     <p>Benthic category</p>
                 </td>
-                </td>
                 <td>
                     <p>Total cover</p>
                 </td>
                 <td>
-                    <p>Change</p>
+                    <p>Add</p>
+                </td>
+                <td>
+                    <p>Reset</p>
                 </td>
             </tr>
         </thead>
