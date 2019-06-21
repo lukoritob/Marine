@@ -1,11 +1,34 @@
 <!-- {{ trial2 }} -->
+<table>
+    <h1>lookup Benthic data add form.</h1>
+    <h3>Existing data.</h3>
+    <thead>
+        <tr>
+            <th>local name</th>
+            <th>Abbreviation.</th>
+            <th>common name</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% csrf_token %} {% for item in trial2 %}
+        <tr class="datarow">
+            <td>{{item.Name_Local}}</td>
+            <td>{{item.Abbrv}}</td>
+            <td>{{item.Name_Common}}</td>
+            <td>{{item.ID}}</td>
+
+        </tr>
+        {% endfor %}</tbody>
+</table>
+
 
 <!-- {{ form }} -->
 
 <body style="background-color: aquamarine">
 
     <table>
-        <h1>lookup Benthic data add form.</h1>
+        <h3>Addition form.</h3>
         {% csrf_token %}
         <tr>
             <form action="" method="post">
@@ -15,6 +38,7 @@
                 <td>{{form.Name_Common}}</td>
                 <td>{{form.ID}}</td>
                 <td> <input class="table_button" type="submit" value="Add inventory" /></td>
+                <td> <input class="table_button" type="reset" value="Reset" /></td>
             </form>
             </td>
         </tr>
@@ -33,7 +57,10 @@
                     <p>ID</p>
                 </td>
                 <td>
-                    <p>Change</p>
+                    <p>Add</p>
+                </td>
+                <td>
+                    <p>Reset</p>
                 </td>
             </tr>
         </thead>
