@@ -50,7 +50,7 @@ class Survey_Info(models.Model):
     Trans_No = models.IntegerField()
     Date_Survey = models.DateTimeField('date surveyed')
     
-    #Report models.
+#Report models.
 # class Average_fish_density(models.Model):
 #     Name_Local = models.CharField(max_length=30)
 #     AvgOf_Total_Count = models.FloatField()
@@ -84,7 +84,11 @@ class Survey_Info(models.Model):
 
 
 # class Annual_average_benthic_cover_persite(models.Model):
-#     pass
+#     SiteName = models.CharField(max_length=20)
+#     Date_Survey = models.DateTimeField('date surveyed')   
+#     Enter_benthic_category = models.CharField(max_length=20)
+#     Avg_Of_Cover = models.FloatField()
+
 
 # class Average_invertebrates_cover(models.Model):
 #     Name_Invert = models.CharField(max_length=20)
@@ -113,5 +117,6 @@ class Survey_Info(models.Model):
 #overall invertebrate data with % per year per invert per site.
 # class Overall_invertebrate_data(models.Model):
 #     pass
+
 
 
